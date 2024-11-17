@@ -1,0 +1,135 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Hasibul Hasan HASIB, Rajshahi University of Engineering & Technology, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.2.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+X:\3-1\3106\LF\Led.uvprojx
+Project File Date:  11/16/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+led_test.c(1): warning: In file included from...
+C:/Users/HASIB/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/HASIB/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/HASIB/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+led_test.c(28): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   28 |     // Configure PA1<96>PA6 as outputs (push-pull, max speed 50 MHz)
+      |                     ^
+led_test.c(34): warning: no previous extern declaration for non-static variable 'led_position' [-Wmissing-variable-declarations]
+   34 | volatile int led_position = 3; // position
+      |              ^
+led_test.c(34): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   34 | volatile int led_position = 3; // position
+      |          ^
+led_test.c(35): warning: no previous extern declaration for non-static variable 'flag' [-Wmissing-variable-declarations]
+   35 | volatile int flag =0;
+      |              ^
+led_test.c(35): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   35 | volatile int flag =0;
+      |          ^
+led_test.c(83): warning: no previous extern declaration for non-static variable 'start' [-Wmissing-variable-declarations]
+   83 | volatile int start =0;
+      |              ^
+led_test.c(83): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   83 | volatile int start =0;
+      |          ^
+led_test.c(94): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   94 |         GPIOA->ODR |= (1UL << 3);   // Light up corresponding LED (PA1<96>PA6
+      |                                                                       ^
+led_test.c(85): warning: no previous prototype for function 'EXTI15_10_IRQHandler' [-Wmissing-prototypes]
+   85 | void EXTI15_10_IRQHandler(void) {
+      |      ^
+led_test.c(85): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   85 | void EXTI15_10_IRQHandler(void) {
+      | ^
+      | static 
+led_test.c(98): warning: no previous prototype for function 'EXTI0_IRQHandler' [-Wmissing-prototypes]
+   98 | void EXTI0_IRQHandler(void){
+      |      ^
+led_test.c(98): note: declare 'static' if the function is not intended to be used outside of this translation unit
+   98 | void EXTI0_IRQHandler(void){
+      | ^
+      | static 
+led_test.c(117): warning: no previous prototype for function 'EXTI1_IRQHandler' [-Wmissing-prototypes]
+  117 | void EXTI1_IRQHandler(void){
+      |      ^
+led_test.c(117): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  117 | void EXTI1_IRQHandler(void){
+      | ^
+      | static 
+led_test.c(39): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   39 |     AFIO->EXTICR[3] &= ~(15UL << 12); // Clear EXTI15 mapping
+      |     ^~~~~~~~~~~~
+C:/Users/HASIB/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(1414): note: expanded from macro 'AFIO'
+ 1414 | #define AFIO                ((AFIO_TypeDef *) AFIO_BASE)
+      |                             ^
+led_test.c(40): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   40 |     AFIO->EXTICR[3] |= (2UL << 12);  // Map PC15 to EXTI15
+      |     ^~~~~~~~~~~~
+C:/Users/HASIB/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(1414): note: expanded from macro 'AFIO'
+ 1414 | #define AFIO                ((AFIO_TypeDef *) AFIO_BASE)
+      |                             ^
+13 warnings generated.
+compiling led_test.c...
+linking...
+Program Size: Code=1600 RO-data=268 RW-data=4 ZI-data=1640  
+".\Objects\Led.axf" - 0 Error(s), 13 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.1.0.pack
+                ARM::CMSIS@6.1.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.1.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil::STM32F1xx_DFP@2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F103C8
+  ./RTE/_Target_1
+  C:/Users/HASIB/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include
+  C:/Users/HASIB/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.1.0
+
+   * Component: Keil::Device:Startup@1.0.0
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
+      Source file:   Device/Source/system_stm32f10x.c
+      Include file:  RTE_Driver/Config/RTE_Device.h
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
